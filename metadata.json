@@ -1,0 +1,9 @@
+{
+  "name": "Silsila Azeemia Spiritual Research Platform",
+  "description": "A dedicated AI-powered library and spiritual research platform for Silsila Azeemia, featuring Qalandar AI, Muraqaba tools, and spiritual healing tracking.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

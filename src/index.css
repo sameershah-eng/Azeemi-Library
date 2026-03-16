@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  
+  --color-primary: #2563EB;
+  --color-primary-dark: #1D4ED8;
+  --color-bg-main: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-border-light: #E5E7EB;
+  --color-text-main: #111827;
+  --color-text-muted: #6B7280;
+  --color-gold: #D4AF37;
+
+  --background-action: linear-gradient(90deg, #2563EB 0%, #3B82F6 100%);
+}
+
+body {
+  font-family: var(--font-roboto);
+  @apply bg-bg-main text-text-main min-h-screen;
+}
+
+.action-bg {
+  background: var(--background-action);
+}
+
+.glass-panel {
+  @apply bg-surface border border-border-light rounded-2xl shadow-sm;
+}
+
+.muraqaba-timer {
+  background: conic-gradient(from 0deg, #2563EB, #D4AF37, #2563EB);
+}
+
+/* Custom scrollbar for a clean look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}

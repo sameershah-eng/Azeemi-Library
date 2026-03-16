@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "library_book": {
+      "title": "Library Book",
+      "description": "A spiritual book in the Azeemia library.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the book" },
+        "author": { "type": "string", "description": "Author of the book" },
+        "coverUrl": { "type": "string", "description": "URL to the book cover image" },
+        "description": { "type": "string", "description": "Brief summary of the book" },
+        "category": { "type": "string", "description": "Category (e.g., Muraqaba, Healing, Philosophy)" },
+        "pdfUrl": { "type": "string", "description": "Link to the PDF file" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["title", "author"]
+    },
+    "reading_progress": {
+      "title": "Reading Progress",
+      "description": "User's progress in a specific book.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the user" },
+        "bookId": { "type": "string", "description": "ID of the book" },
+        "progress": { "type": "number", "description": "Percentage completed (0-100)" },
+        "lastReadPage": { "type": "integer", "description": "The last page the user was on" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "bookId", "progress"]
+    },
+    "healing_request": {
+      "title": "Healing Request",
+      "description": "A request for spiritual healing (Roohani Ilaj).",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the requester" },
+        "patientName": { "type": "string", "description": "Name of the person needing healing" },
+        "issue": { "type": "string", "description": "Description of the spiritual or physical issue" },
+        "status": { "type": "string", "enum": ["Received", "Processing", "Completed"], "description": "Current status of the request" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "patientName", "issue", "status"]
+    },
+    "user_note": {
+      "title": "User Note",
+      "description": "A spiritual journal entry or highlight note.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the user" },
+        "bookId": { "type": "string", "description": "ID of the book (optional)" },
+        "content": { "type": "string", "description": "The text of the note" },
+        "highlightedText": { "type": "string", "description": "The text highlighted in the book (if applicable)" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "content"]
+    }
+  },
+  "firestore": {
+    "library_books": {
+      "schema": "library_book",
+      "description": "Collection of spiritual books."
+    },
+    "reading_progress": {
+      "schema": "reading_progress",
+      "description": "User reading progress tracking."
+    },
+    "healing_ledger": {
+      "schema": "healing_request",
+      "description": "Tracking spiritual healing requests."
+    },
+    "user_notes": {
+      "schema": "user_note",
+      "description": "User spiritual journals and notes."
+    }
+  }
+}
