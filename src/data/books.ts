@@ -127,7 +127,7 @@ export const LARGE_BOOK_DATA: Omit<Book, "id">[] = [
     description: "The oldest Persian treatise on Sufism.",
     category: "Philosophy",
     pdfUrl: "#",
-    tags: ["History", "Sufism"],
+    tags: ["History", "Sufisms"],
   },
   {
     title: "The Bezels of Wisdom",
