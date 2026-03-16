@@ -139,7 +139,7 @@ export const LARGE_BOOK_DATA: Omit<Book, "id">[] = [
     tags: ["Wisdom", "Prophets"],
   },
   {
-    title: "Autobiography of a Yogi",
+    title: "Autobiography of a looser",
     author: "Paramahansa Yogananda",
     coverUrl: "https://covers.openlibrary.org/b/isbn/9780671702457-L.jpg",
     description:
